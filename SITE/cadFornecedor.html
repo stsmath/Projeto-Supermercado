@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<title>Mercado Cid</title>	
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="css/mystyle.css">
+	</head>
+	
+	<body>
+		<!-- Banner -->
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<center>
+					<a href="index.html">
+						<img 	src="imagens/logo.png"
+								title="&copy; Mercado Cid">
+					</a>
+				</center>
+			</div>
+		</div>
+		
+		<!-- Menu -->
+		<ul class="nav nav-pills nav-fill">
+			<li class="nav-item">
+				<a class="nav-link" href="index.html">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="caixa.html">Caixa</a>
+			</li>			
+			<li class="nav-item">
+				<a class="nav-link" href="cadCliente.html">Cliente</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="cadEstoque.html">Estoque</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="cadFornecedor.html">Fornecedores</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="cadFuncionario.html">Funcionários</a>
+			</li>			
+			<li class="nav-item">
+				<a class="nav-link" href="cadProduto.html">Produto</a>
+			</li>			
+			<li class="nav-item">
+				<a class="nav-link" href="cadVenda.html">Vendas</a>
+			</li>
+		</ul>
+		
+		<!-- Conteudo AQUI! -->
+		<center><h2>Cadastro de Fornecedores</h2></center>
+		<form action="cadFornecedor.php" method="post" enctype="multipart/form-data">
+            <br>
+			Nome da Empresa: <input type="text" name="nomeFornecedor" maxlength="30" size="30" placeholder="Informe o nome da Empresa">
+			Ativo: <input type="checkbox" name="ativo" value="1"><br><br>
+			CNPJ: <input type="number" name="cnpj" max="999999999999" min="0">
+			Categoria: <input type="text" name ="categoria" maxlength="30" size="20" placeholder="Ex: Alimento"><br><br>
+			DDD: <input type="number" name="ddd" max="99" min="0" maxlength="2">
+			Telefone 1: <input type="number" name="telefone" >
+			Telefone 2: <input type="number" name="telefone2">
+			Telefone 3: <input type="number" name="telefone3"><br><br>
+			Email: <input type="text" name="email" maxlength="40" size="40" placeholder="Digite seu Email"><br><br>
+			CEP: <input type="number" name="cep" max="99999999" size="15" placeholder="99999999"><br><br>
+            Cidade <input type="text" name="cidade" maxlength="25" size="20" placeholder="Informe a cidade"><br><br>
+            UF: <select name="uf" id="">
+				<option value="AC">AC</option>
+				<option value="AL">AL</option>
+				<option value="AP">AP</option>
+				<option value="AM">AM</option>
+				<option value="BA">BA</option>
+				<option value="CE">CE</option>
+				<option value="DF">DF</option>
+				<option value="ES">ES</option>
+				<option value="GO">GO</option>
+				<option value="MA">MA</option>
+				<option value="MT">MT</option>
+				<option value="MS">MS</option>
+				<option value="MG">MG</option>
+				<option value="PA">PA</option>
+				<option value="PB">PB</option>
+				<option value="PR">PR</option>
+				<option value="PE">PE</option>
+				<option value="PI">PI</option>
+				<option value="RJ">RJ</option>
+				<option value="RN">RN</option>
+				<option value="RS">RS</option>
+				<option value="RO">RO</option>
+				<option value="RR">RR</option>
+				<option value="SC">SC</option>
+				<option value="SP">SP</option>
+				<option value="SE">SE</option>
+				<option value="TO">TO</option>
+			</select>
+            Rua: <input type="text" name="endereco" maxlength="50" size="40" placeholder="ex: Avenida Moçoro"><br><br>
+            Bairro: <input type="text" name="bairro" maxlength="50" size="35" placeholder="ex: Limoeiro"><br><br>
+            Numero: <input type="number" name="numero" max="9999" size="10" placeholder="ex:298"><br><br>
+            Observacoes: <br> <textarea name="obs" cols="40" rows="5"></textarea>   
+			
+            <input type="submit" value="Enviar">
+		</form>
+		
+		<a href='rotinas/listagemFornecedor.php'>Ver listagem de dados</a>
+		<br><br><br>
+		<!-- Rodapé -->
+		<div class="footer">
+			<p>&copy; 2018 Mercadinho Cid Ltda.</p>
+		</div>
+		
+	</body>
+</html>

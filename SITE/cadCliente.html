@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<title>Mercado Cid</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="css/mystyle.css">
+	</head>
+	
+	<body>
+		<!-- Banner -->
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<center>
+					<a href="index.html">
+						<img 	src="imagens/logo.png"
+								title="&copy; Mercado Cid">
+					</a>
+				</center>
+			</div>
+		</div>
+		
+		<!-- Menu -->
+		<ul class="nav nav-pills nav-fill">
+			<li class="nav-item">
+				<a class="nav-link" href="index.html">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="caixa.html">Caixa</a>
+			</li>			
+			<li class="nav-item">
+				<a class="nav-link" href="cadCliente.html">Cliente</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="cadEstoque.html">Estoque</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="cadFornecedor.html">Fornecedores</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="cadFuncionario.html">Funcionários</a>
+			</li>			
+			<li class="nav-item">
+				<a class="nav-link" href="cadProduto.html">Produto</a>
+			</li>			
+			<li class="nav-item">
+				<a class="nav-link" href="cadVenda.html">Vendas</a>
+			</li>
+		</ul>		
+		
+		
+		<h2>Cadastro de Clientes:</h2>
+		<form action="cadCliente.php" enctype="multipart/form-data" method="post">
+		Codigo do Cliente:
+		<input type="number" name="codigo" min="1" max="9999999999"><br><br>
+		Nome completo:
+		<input type="text" name="nomeCliente" maxlength="80" size="80" placeholder="Informe o nome completo!">
+		CPF:
+		<input type="text" name="cpf" maxlength="14" size="14">
+		RG:
+		<input type="text" name="rg" maxlength="12" size="12"><br><br>
+		Data de Nascimento: 
+		<input type="date" name="dataNasc" min="1920-12-31" max="2018-12-31"><br><br>
+		Cliente Ativo?: 
+		<input type="checkBox" name="ativo" value="1"><br><br>
+		
+		Endereco:
+		<input type="text" name="endereco" maxlength="80" size="80">
+		Numero:
+		<input type="text" name="numCasa" maxlength="10" size="10"><br><br>
+		Bairro:
+		<input type="text" name="bairro" maxlength="45" size="45">
+		Cidade:
+		<input type="text" name="cidade" maxlength="45" size="45">
+		Uf:
+		<input type="text" name="uf" maxlength="2" size="2">
+		Cep:
+		<input type="number" name="cep" maxlength="9" size="9"><br><br>
+		Telefones:<br>
+		Residencial:
+		DDD:
+		<input type="number" name="ddd" maxlength="3" size="3"> <input type="number" name="foneRes" maxlength="8" size="9"> 
+		Celular: 
+		DDD:
+		<input type="numebr" name="ddd" maxlength="3" size="3"> <input type="number" name="foneCel" maxlength="9" size="9">
+		<br><br>
+		E-mail:
+		<input type="text" name="email" maxlength="50" size="50"><br><br>
+		Observacoes:<br>
+				<textarea 	name="obs" rows="3" cols="80"></textarea>
+				<br>
+		
+		<input type="submit" value="Cadastrar">
+		</form>
+		
+		<br><a href='rotinas/listagemCliente.php'>Ver listagem dos dados</a><br><br><br>
+		
+		<!-- Rodapé -->
+		<div class="footer">
+			<p>&copy; 2018 Mercadinho Cid Ltda.</p>
+		</div>
+		
+	</body>
+</html>

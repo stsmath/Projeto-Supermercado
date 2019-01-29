@@ -1,0 +1,129 @@
+CREATE DATABASE supermercado;
+
+use supermercado;
+
+CREATE TABLE cliente(
+	codigo		INT AUTO_INCREMENT PRIMARY KEY,
+	nomeCliente 	VARCHAR(80),
+	cpf		BIGINT(14),
+	rg 		BIGINT(12),
+	dataNasc 	DATE,
+	ativo 		BOOLEAN,
+	endereco	VARCHAR(80),
+	numCasa		VARCHAR(10),
+	bairro 		VARCHAR(45),
+	cidade 		VARCHAR(45),
+	uf 		CHAR(2),
+	cep 		VARCHAR(9),
+	foneRes 	VARCHAR(8),
+	foneCel 	VARCHAR(9),
+	ddd 		CHAR(3),
+	email 		VARCHAR(50),
+	obs 		TEXT
+
+);
+
+CREATE TABLE fornecedor(
+	codFornecedor 	int AUTO_INCREMENT PRIMARY KEY ,
+	nomeFornecedor	varchar(100),
+	ativo 		tinyint(1),
+	cnpj 		varchar(18),
+	categoria 	varchar(50),
+	endereco 	varchar(100),
+	bairro 		varchar(45),
+	numero		varchar(10),
+	cidade 		varchar(45),
+	uf 		char(2),
+	cep 		varchar(9),
+	ddd 		char(2),
+	telefone 	varchar(9),
+	telefone2 	varchar(9),
+	telefone3 	varchar(9),
+	email 		varchar(100),
+	obs 		text
+);
+
+Create table funcionario(
+	nomeFuncionario VARCHAR(100),
+	dataNasc 	DATE,
+	cargo 		VARCHAR(50),
+	ativo 		BOOLEAN,
+	cpf 		VARCHAR(14) ,
+	rg 		VARCHAR(12) ,
+	sexo 		CHAR(1),
+	estadoCivil 	CHAR(1),
+	dataContratado 	DATE,
+	endereco 	VARCHAR(100),
+	bairro 		VARCHAR(45) ,
+	cidade 		VARCHAR(45) ,
+	uf 		CHAR(2) ,
+	cep 		VARCHAR(9), 
+	ddd 		CHAR(2) ,
+	foneCel 	VARCHAR(9),
+	foneRes 	VARCHAR(9),
+	email 		VARCHAR(100),
+	obs 		TEXT
+);
+
+CREATE TABLE produto(
+	codProduto 	int(5) AUTO_INCREMENT PRIMARY KEY,
+	nome 		varchar(40),
+	fabricante 	varchar(40),
+	codFabricante 	int(10),
+	custo 		float(7,2),
+	despesas 	float(7,2),
+	lucro 		float(7,2),
+	precoVenda 	float(7,2),
+	promocao 	boolean   ,
+	precoPromocio 	float(7,2),
+	categoria 	char(1),
+	peso 		float(7,2),
+	ativo 		boolean   ,
+	descricao 	text	   
+);
+
+CREATE TABLE caixa(
+	codCaixa 	VARCHAR (5) primary key,
+	codVenda 	VARCHAR (5),
+	codProduto 	VARCHAR (5),
+	qtde 		INT (3),
+	precoUnidade	FLOAT(7,2),
+	precoTot	FLOAT(7,2)
+);
+
+CREATE TABLE venda(
+	codVenda           INT(5) auto_increment primary key,
+	codCliente         INT(10),
+	codCaixa           INT(5),
+	codFuncionario     INT(10),
+	codEstoque         INT(2),
+	nomeTransport      VARCHAR(50),
+	dataVenda          DATE,
+	valorBruto         FLOAT(9,2),
+	desconto           FLOAT(6,2),
+	frete              float(5,2),
+	valorFinal         FLOAT(9,2),
+	formaPag           VARCHAR(50),
+	parcelamento       INT(2),
+	valorJuros         FLOAT(6,2),
+	entregue           BOOLEAN
+);
+
+
+CREATE TABLE estoque(
+	codEstoque 		VARCHAR(2) PRIMARY KEY,
+	codProduto 		VARCHAR(5),
+	nomeProduto 		VARCHAR(100),
+	codFornecedor 		VARCHAR(5),
+	codFuncionario 		VARCHAR(4),
+	nomeFuncionario 	VARCHAR(100),
+	categoria 		VARCHAR(50),
+	precoUnidade 		FLOAT(7,2),
+	codLote 		VARCHAR(4),
+	dataRecebimento 	DATE,
+	dataFabricacao  	DATE,
+	dataValidade 		DATE,
+	qtdeEstoque 		INT(5),
+	ativo 			BOOLEAN,
+	obs 			TEXT
+);

@@ -1,0 +1,158 @@
+<html>
+	<head>
+		<title>Mercado Cid</title>	
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="css/mystyle.css">
+	</head>
+	
+	<body>
+		<!-- Banner -->
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<center>
+					<a href="index.html">
+						<img 	src="imagens/logo.png"
+								title="&copy; Mercado Cid">
+					</a>
+				</center>
+			</div>
+		</div>
+		
+		<!-- Menu -->
+		<ul class="nav nav-pills nav-fill">
+			<li class="nav-item">
+				<a class="nav-link" href="index.html">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="caixa.html">Caixa</a>
+			</li>			
+			<li class="nav-item">
+				<a class="nav-link" href="cadCliente.html">Cliente</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="cadEstoque.html">Estoque</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="cadFornecedor.html">Fornecedores</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="cadFuncionario.html">Funcionários</a>
+			</li>			
+			<li class="nav-item">
+				<a class="nav-link" href="cadProduto.html">Produto</a>
+			</li>			
+			<li class="nav-item">
+				<a class="nav-link" href="cadVenda.html">Vendas</a>
+			</li>
+		</ul>
+		
+		<!-- Conteudo AQUI! -->
+		<h2>Cadastro de Vendas</h2>
+		<form 	action="vendas.php" 
+				enctype="multipart/form-data"
+				method="post">
+			ID(Código) da venda:
+			<input 	type="number" 
+					name="codVenda"
+					min="1"
+					max="99999">
+			ID(Código) do cliente:
+			<input 	type="number" 
+					name="codCliente"
+					min="1"
+					max="99999">
+			ID(Código) do caixa:
+			<input 	type="number" 
+					name="codCaixa"
+					min="1"
+					max="99999">
+			ID(Código) do funcionário:
+			<input 	type="number" 
+					name="codFuncionario"
+					min="1"
+					max="99999">
+			ID(Código) do estoque:
+			<input 	type="number" 
+					name="codEstoque"
+					min="1"
+					max="99999">
+			<br>
+			Nome da transportadora: 
+			<input 	type="text" 
+					name="nomeTransport" 
+					maxlength="50" 
+					size="50"
+					placeholder="Informe o nome da transportadora">
+			<br>
+			Data da venda: 
+			<input 	type="date" 
+					name="dataVenda"valor
+					min="2018-10-11"
+					max="2025-12-31">
+			Valor bruto: R$
+			<input type="number"
+				   name="valorBruto"
+				   step=".01"
+				   min="0"
+				   placeholder="0000,00">
+			Desconto: R$
+			<input type="number"
+				   name="desconto"
+				   step=".01"
+				   min="0"
+				   placeholder="0000,00">
+			Frete: R$
+			<input type="number"
+				   name="frete"
+				   step=".01"
+				   min="0"
+				   placeholder="0000,00">
+			Valor final: R$
+			<input type="number"
+				   name="valorFinal"
+				   step=".01"
+				   min="0"
+				   placeholder="0000,00">
+			Forma de pagamento:
+			<select name="formaPag">
+				<option value="">Escolha</option>
+				<option value="BBancario">Boleto bancário</option>
+				<option value="CCreditoMercadinho">Cartão de Crédito (Mercadinho)</option>
+				<option value="CCreditoVisa">Cartão de Crédito (Visa)</option>
+				<option value="CCreditoMaster">Cartão de Crédito (Master Card)</option>
+				<option value="CDebitoVisa">Cartão de Débito (Visa)</option>
+				<option value="CDebitoMaster">Cartão de Débito (Master Card)</option>
+		    </select>
+			Número de parcelas:
+			<select name="parcelamento">
+				<option value="">Escolha</option>
+				<option value="1">À vista</option>
+				<option value="2">2x</option>
+				<option value="3">3x</option>
+				<option value="4">4x</option>
+				<option value="5">5x</option>
+				<option value="6">6x</option>
+		    </select>
+			<br>
+			Juros da parcela: %
+			<input type="number"
+				   name="valorJuros"
+				   step=".01"
+				   min="0"
+				   placeholder="00,00">
+			<br>
+			<input 	type="checkbox" 
+						name="entregue" 
+						value="1"> Entregue<br>
+			<hr>
+			<input type="submit" value="Enviar">
+		</form>
+		
+		<!-- Rodapé -->
+		<div class="footer">
+			<p>&copy; 2018 Mercadinho Cid Ltda.</p>
+		</div>
+		
+	</body>
+</html>
